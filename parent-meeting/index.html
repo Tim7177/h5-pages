@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no,email=no">
+<title>福州十八中九年级半期家长会纪要</title>
+<style>
+  :root {
+    --bg: #f5f2eb;
+    --card: #fcfaf6;
+    --subtle: #efeae0;
+    --zebra: #f6f3ec;
+    --border: #dcd6ca;
+    --hairline: #eae4d9;
+    --ink: #1c1b18;
+    --ink-body: #2f2d29;
+    --ink-sec: #59554d;
+    --ink-muted: #857f74;
+    --accent: #8b3a32;
+    --accent-bg: #f6eeec;
+    --accent-bd: #d5b9b5;
+    --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { font-size: 16px; background: var(--bg); color: var(--ink-body); -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    line-height: 1.7;
+    background: var(--bg);
+    color: var(--ink-body);
+    padding-bottom: calc(36px + env(safe-area-inset-bottom));
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 16px 16px 0; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* 纸感卡片与区块秩序 */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 18px;
+    margin-bottom: 14px;
+  }
+  section.card[data-sec]::before {
+    content: "SECTION " attr(data-sec);
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-size: 17.5px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  /* 首页报头 */
+  .hero {
+    padding: 24px 20px 22px;
+    border-top: 2px solid var(--ink);
+  }
+  .eyebrow {
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.32;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .lead {
+    font-size: 15px;
+    color: var(--ink-sec);
+    line-height: 1.72;
+  }
+
+  /* 一检时间卡 */
+  .exam-card { border-color: var(--accent-bd); }
+  .exam-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .exam-date {
+    font-family: var(--serif);
+    font-size: 18.5px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.35;
+    font-variant-numeric: tabular-nums;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-bd);
+    padding: 2px 8px;
+    border-radius: 3px;
+    line-height: 1.5;
+  }
+  .exam-desc {
+    font-size: 14.5px;
+    color: var(--ink-body);
+    line-height: 1.72;
+    margin-bottom: 14px;
+  }
+  .sched {
+    background: var(--subtle);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    color: var(--ink-sec);
+    font-variant-numeric: tabular-nums;
+  }
+  .sched-row {
+    display: flex;
+    gap: 12px;
+    padding: 7px 0;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .sched-row:last-child { border-bottom: none; }
+  .sched-day { font-weight: 600; color: var(--ink); min-width: 84px; flex-shrink: 0; }
+
+  /* 核心结论 */
+  .concl-list { list-style: none; }
+  .concl-item {
+    font-size: 15px;
+    color: var(--ink-body);
+    line-height: 1.72;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .concl-item:first-child { padding-top: 2px; }
+  .concl-item:last-child { padding-bottom: 0; border-bottom: none; }
+  .concl-head { font-weight: 600; color: var(--ink); margin-right: 2px; }
+  .num-tag {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-bd);
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: 1px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 红线提醒 */
+  .redline {
+    background: var(--accent-bg);
+    border-color: var(--accent-bd);
+  }
+  .redline[data-sec]::before {
+    border-bottom-color: var(--accent-bd);
+    color: var(--accent);
+  }
+  .redline-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .redline p { font-size: 14.5px; color: var(--ink-body); line-height: 1.72; }
+  .redline strong { color: var(--accent); font-weight: 600; }
+
+  /* 时间节点 */
+  .timeline { list-style: none; position: relative; padding-left: 18px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 11px;
+    bottom: 11px;
+    width: 1px;
+    background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    padding: 10px 0;
+    font-size: 14.5px;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .tl-item:first-child { padding-top: 2px; }
+  .tl-item:last-child { padding-bottom: 0; border-bottom: none; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 19px;
+    width: 7px;
+    height: 7px;
+    border-radius: 4px;
+    border: 1.5px solid var(--accent);
+    background: var(--card);
+  }
+  .tl-item:first-child::before { top: 11px; }
+  .tl-date {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--ink);
+    margin-right: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .tl-txt { color: var(--ink-sec); }
+
+  /* 近期必做 & 二级页要点列表 */
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    position: relative;
+    padding: 11px 0 11px 16px;
+    font-size: 15px;
+    color: var(--ink-body);
+    line-height: 1.72;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .bullet-list li:first-child { padding-top: 2px; }
+  .bullet-list li:last-child { padding-bottom: 0; border-bottom: none; }
+  .bullet-list li::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 22px;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background: var(--accent);
+  }
+  .bullet-list li:first-child::before { top: 13px; }
+  .bullet-list strong { color: var(--ink); font-weight: 600; }
+
+  /* 入口按钮（触控区均不小于 44px） */
+  .entry-policy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 58px;
+    text-align: left;
+    background: var(--subtle);
+    border: 1px solid var(--accent-bd);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .entry-policy:active, .subj-btn:active, .back-btn:active, .bottom-back:active {
+    background: var(--hairline);
+  }
+  .entry-name { font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+  .entry-sub { font-size: 12.5px; color: var(--ink-muted); margin-top: 4px; line-height: 1.45; }
+  .arrow { font-size: 17px; color: var(--accent); font-weight: 500; padding-left: 10px; flex-shrink: 0; }
+
+  .subj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .subj-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .subj-btn .entry-sub { font-size: 12px; }
+
+  /* 二级页顶部导航 */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    margin: -16px -16px 14px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .back-btn {
+    min-height: 44px;
+    min-width: 96px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .page-tag { font-size: 12.5px; font-weight: 500; color: var(--ink-muted); letter-spacing: 0.04em; }
+  .sub-header {
+    margin-bottom: 14px;
+    padding: 20px 18px;
+    border-top: 2px solid var(--ink);
+  }
+  .sub-header h2 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .sub-meta { font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; }
+
+  /* 表格细线与斑马纹 */
+  .tbl-hint { font-size: 13px; color: var(--ink-muted); margin-bottom: 10px; line-height: 1.6; }
+  .tbl-picked {
+    display: none;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-bd);
+    border-radius: 4px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .tbl-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--card);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: center;
+    background: var(--card);
+    font-variant-numeric: tabular-nums;
+  }
+  th, td {
+    padding: 10px 7px;
+    border-bottom: 1px solid var(--hairline);
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  th {
+    background: var(--subtle);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 12.5px;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr:nth-child(even) td { background: var(--zebra); }
+  tbody tr:last-child td { border-bottom: none; }
+  .avg-tbl th:first-child, .avg-tbl td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--subtle);
+    font-weight: 600;
+    color: var(--ink);
+    text-align: left;
+    padding-left: 10px;
+    border-right: 1px solid var(--border);
+  }
+  .avg-tbl tbody tr:nth-child(even) td:first-child { background: #ebe5da; }
+  .avg-tbl tbody tr { cursor: pointer; }
+  .avg-tbl tbody tr.picked td,
+  .avg-tbl tbody tr.picked td:first-child {
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .pe-tbl td { white-space: normal; padding: 10px 8px; }
+  .pe-tbl td + td, .pe-tbl th + th { border-left: 1px solid var(--hairline); }
+  .pe-tbl td.pe-cat,
+  .pe-tbl tr:nth-child(even) td.pe-cat {
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--subtle);
+    width: 28%;
+    border-right: 1px solid var(--border);
+  }
+
+  .bottom-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    margin-top: 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: center;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .foot-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.03em;
+    padding: 14px 4px 6px;
+  }
+
+  @media (max-width: 360px) {
+    .subj-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ==================== 首页 ==================== -->
+  <main id="view-home" class="view active">
+    <header class="card hero">
+      <div class="eyebrow">福州第十八中学 · 2026—2027学年第一学期</div>
+      <h1>九年级半期家长会纪要</h1>
+      <p class="lead">聚焦半期学情诊断、2027年中招政策与全市“一检”备考规划，家校协同抢抓考前关键期。</p>
+    </header>
+
+    <section class="card exam-card" data-sec="01">
+      <div class="exam-top">
+        <span class="exam-date">2027年1月18—20日 全市一检</span>
+        <span class="badge">实际备考不满7周</span>
+      </div>
+      <p class="exam-desc">九上期末考即福州市初三“一检”，全市统考统改并公布六区分数段及全市排位；扣除秋假、运动会、科艺节与元旦假期，在校教学不满7周。</p>
+      <div class="sched">
+        <div class="sched-row"><span class="sched-day">1月18日 周一</span><span>08:30 语文 ｜ 15:00 数学</span></div>
+        <div class="sched-row"><span class="sched-day">1月19日 周二</span><span>08:30 物理 ｜ 10:45 化学 ｜ 15:00 英语</span></div>
+        <div class="sched-row"><span class="sched-day">1月20日 周三</span><span>08:30 历史 ｜ 10:15 道德与法治</span></div>
+      </div>
+    </section>
+
+    <section class="card" data-sec="02">
+      <h2 class="sec-title">核心结论</h2>
+      <ul class="concl-list">
+        <li class="concl-item"><span class="num-tag">1</span><span class="concl-head">抢抓一检窗口：</span>1月18—20日统考定位全市梯队，实际教学不满7周，需同步推进九下新课与跨册复习。</li>
+        <li class="concl-item"><span class="num-tag">2</span><span class="concl-head">严守C级红线：</span>前72%有普高或综合高中机会（本校上届超80%），但小四科未达C级无缘一级达标校。</li>
+        <li class="concl-item"><span class="num-tag">3</span><span class="concl-head">稳拿基础分层：</span>中考70%—80%为基础题；弱生抓课本，中等生每日一练冲90分，优生限时练福州真题。</li>
+        <li class="concl-item"><span class="num-tag">4</span><span class="concl-head">死守课内阵地：</span>7:40进班早读、课后动态分层培优补差；严管手机防搜抄答案，每晚23:00前入睡。</li>
+        <li class="concl-item"><span class="num-tag">5</span><span class="concl-head">策略陪伴备考：</span>考后“先看人再看分”，利用5天秋假列书面目标与计划，瞄准4月体育中考规律锻炼。</li>
+      </ul>
+    </section>
+
+    <section class="card redline" data-sec="03">
+      <div class="redline-title">一类校录取红线提醒</div>
+      <p><strong>物理、化学、道德与法治、历史</strong>四科中考等级按福州市全体考生成绩百分比划定（绝非60分及格线），<strong>任一科未达 C 等级，不能被任何一所一级达标校（一类校）录取</strong>。</p>
+    </section>
+
+    <section class="card" data-sec="04">
+      <h2 class="sec-title">关键时间节点</h2>
+      <ul class="timeline">
+        <li class="tl-item"><span class="tl-date">11.18—11.22</span><span class="tl-txt">秋假连周末共5天，排定复习作息并书面列出一检目标</span></li>
+        <li class="tl-item"><span class="tl-date">2026.11.24</span><span class="tl-txt">全年级拟开展体育中考选考项目模拟测（不含长跑、游泳）</span></li>
+        <li class="tl-item"><span class="tl-date">2027.01.18—20</span><span class="tl-txt">福州市初三第一次质量检测（一检，考7科）</span></li>
+        <li class="tl-item"><span class="tl-date">2027.04</span><span class="tl-txt">福州体育中考（40分）；化学结束九下新课启动一轮复习</span></li>
+        <li class="tl-item"><span class="tl-date">2027.05—06</span><span class="tl-txt">5月二检，二检后优质高中自主招生；6月中考及志愿填报</span></li>
+      </ul>
+    </section>
+
+    <section class="card" data-sec="05">
+      <h2 class="sec-title">家长近期必做（今晚明天与秋假）</h2>
+      <ul class="bullet-list">
+        <li><strong>清点材料交卷：</strong>核查化学原卷与估分，装订语文1—8页背诵表，11月17日带回《曹刿论战》小测卷。</li>
+        <li><strong>先看人再看分：</strong>先接纳疏导情绪、不横向攀比；备齐九下及全套6册语文课本与《唐诗三百首》。</li>
+        <li><strong>双平台查弱科：</strong>看“校和家”找低于同区间均分3分以上的弱科，登“智学网”下载各科答题卡。</li>
+        <li><strong>落实秋假任务：</strong>定5天作息并书面写出一检目标；完成化学1—18校本整理背诵及语数英复习订正。</li>
+        <li><strong>跟进体育模测：</strong>按体育满分标准启动规律锻炼，关注群通知填报11月24日选考模拟测选项。</li>
+      </ul>
+    </section>
+
+    <section class="card" data-sec="06">
+      <h2 class="sec-title">分科备考与政策数据</h2>
+      <button type="button" class="entry-policy" data-target="policy">
+        <div>
+          <div class="entry-name">政策与数据</div>
+          <div class="entry-sub">升学政策 · 目标校参考线 · 年段均分表 · 薄弱科判定</div>
+        </div>
+        <span class="arrow">›</span>
+      </button>
+      <div class="subj-grid">
+        <button type="button" class="subj-btn" data-target="yuwen">
+          <div><div class="entry-name">语文</div><div class="entry-sub">1.18 上午｜九上+九下两单元</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="shuxue">
+          <div><div class="entry-name">数学</div><div class="entry-sub">1.18 下午｜九上+九下相似</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="yingyu">
+          <div><div class="entry-name">英语</div><div class="entry-sub">1.19 下午｜九上 U1—U6</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="wuli">
+          <div><div class="entry-name">物理</div><div class="entry-sub">1.19 上午｜13—19章 · C级线</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="huaxue">
+          <div><div class="entry-name">化学</div><div class="entry-sub">1.19 上午｜1—8章 · C级线</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="daofa">
+          <div><div class="entry-name">道德与法治</div><div class="entry-sub">1.20 上午｜八下+九上+时事</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="lishi">
+          <div><div class="entry-name">历史</div><div class="entry-sub">1.20 上午｜八上+九上 · C级线</div></div>
+          <span class="arrow">›</span>
+        </button>
+        <button type="button" class="subj-btn" data-target="tiyu">
+          <div><div class="entry-name">体育</div><div class="entry-sub">2027.04 中考｜40分满分表</div></div>
+          <span class="arrow">›</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="foot-note">整理自 2026年11月16日 九年级半期家长会纪要</div>
+  </main>
+
+  <!-- ==================== 政策与数据 ==================== -->
+  <section id="view-policy" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">政策与数据</span>
+    </div>
+    <div class="card sub-header">
+      <h2>政策与数据</h2>
+      <div class="sub-meta">2027年中招政策口径、单科参考线与半期考年段均分表</div>
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">升学政策</h3>
+      <ul class="bullet-list">
+        <li><strong>普高录取比例：</strong>政策口径下前72%学生有机会升入普高或综合高中班；本校26届普高上线率远超80%，预计27届更高（八下已完地生中考）。</li>
+        <li><strong>小四科C级红线：</strong>物理、化学、道法、历史按全市考生成绩百分比划等级（非60分及格线），任一科未达C级不能被任何一级达标校录取。</li>
+        <li><strong>一检战略定位：</strong>1月18—20日全市统一命题阅卷，公布六区分数段及全市排位，为中考估分与志愿填报提供依据。</li>
+        <li><strong>自主招生要求：</strong>部分优质高中在<strong>二检后</strong>开展自主招生，对一检、二检成绩有明确要求。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">目标校单科参考线（基于半期年段数据）</h3>
+      <ul class="bullet-list">
+        <li><strong>语文参考线：</strong>120分+排年段前50名（冲“一三附”需努力破120分）；115分+前150名；110分+前300名。</li>
+        <li><strong>物理一三附线：</strong>半期难度略高于一检（均分约有10分提升空间）；95分+（年段55人）为“一三附”门槛分。</li>
+        <li><strong>物理老九所及本校线：</strong>90分+（170人）对应“老九所”（老八所+长乐一中）线；85分+（257人，占24.04%）为本校（中等一类校，年段约200名出头）最低要求。</li>
+        <li><strong>物理其余分布：</strong>80—100分338人（31.62%），70—100分497人（46.49%），60—100分639人（59.78%）。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">薄弱科判定方法</h3>
+      <ul class="bullet-list">
+        <li><strong>对照区间均分：</strong>打开“校和家”查看学生所处年段百分比区间，对照下表同区间各科均分。</li>
+        <li><strong>3分判定标准：</strong>高于同区间均分为优势科；<strong>低于同区间均分3分以上</strong>即为薄弱科（如21%—25%语文均分111分，低于108分即薄弱）。</li>
+        <li><strong>双平台靶向补弱：</strong>结合“智学网”下载各科答题卡排查失分题型，薄弱科落实“每日一练”。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">半期考各分数段学科均分表</h3>
+      <div class="tbl-hint">点击任意区间行可高亮并换算“均分-3分”薄弱警戒线：</div>
+      <div id="picked-box" class="tbl-picked"></div>
+      <div class="tbl-wrap">
+        <table class="avg-tbl" id="avg-table">
+          <thead>
+            <tr><th>年段百分比</th><th>语文</th><th>数学</th><th>英语</th><th>物理</th><th>化学</th><th>道法</th><th>历史</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>前5%</td><td>118</td><td>140</td><td>140</td><td>95</td><td>87</td><td>87</td><td>85</td></tr>
+            <tr><td>6%—10%</td><td>114</td><td>130</td><td>136</td><td>90</td><td>83</td><td>82</td><td>80</td></tr>
+            <tr><td>11%—15%</td><td>117</td><td>129</td><td>138</td><td>89</td><td>82</td><td>84</td><td>80</td></tr>
+            <tr><td>16%—20%</td><td>115</td><td>127</td><td>136</td><td>89</td><td>82</td><td>82</td><td>82</td></tr>
+            <tr><td>21%—25%</td><td>111</td><td>121</td><td>132</td><td>83</td><td>76</td><td>78</td><td>79</td></tr>
+            <tr><td>26%—30%</td><td>109</td><td>118</td><td>130</td><td>82</td><td>74</td><td>75</td><td>74</td></tr>
+            <tr><td>31%—35%</td><td>108</td><td>113</td><td>128</td><td>77</td><td>71</td><td>73</td><td>74</td></tr>
+            <tr><td>36%—40%</td><td>105</td><td>110</td><td>124</td><td>74</td><td>67</td><td>71</td><td>72</td></tr>
+            <tr><td>41%—45%</td><td>103</td><td>108</td><td>119</td><td>70</td><td>64</td><td>67</td><td>68</td></tr>
+            <tr><td>46%—50%</td><td>102</td><td>105</td><td>117</td><td>66</td><td>61</td><td>68</td><td>65</td></tr>
+            <tr><td>51%—55%</td><td>100</td><td>100</td><td>111</td><td>64</td><td>60</td><td>64</td><td>66</td></tr>
+            <tr><td>56%—60%</td><td>99</td><td>96</td><td>103</td><td>60</td><td>58</td><td>63</td><td>66</td></tr>
+            <tr><td>61%—65%</td><td>97</td><td>87</td><td>102</td><td>55</td><td>54</td><td>61</td><td>62</td></tr>
+            <tr><td>66%—70%</td><td>93</td><td>87</td><td>93</td><td>51</td><td>48</td><td>58</td><td>58</td></tr>
+            <tr><td>后30%</td><td>64</td><td>40</td><td>54</td><td>27</td><td>27</td><td>38</td><td>38</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 语文 ==================== -->
+  <section id="view-yuwen" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">语文备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>语文</h2>
+      <div class="sub-meta">一检时间：2027年1月18日（周一）8:30—10:30</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>加速教完九上、九下两册课文，同步开展一检复习（九上用《顶尖课课练》、九下配校本）。</li>
+        <li>每周讲1—2篇古诗文配现代文，每周1—2次小测（默写低于80分或得F须重测）。</li>
+        <li>11月16日起启用8页艾宾浩斯计划表，按1天至2个月周期滚动背默至一检。</li>
+        <li>名著转入《唐诗三百首》，通过每周末校本周练（校本7—17）收缴讲评落实。</li>
+        <li>阅读由议论文转向侧重小说；写作新增议论文训练，设专用作文本抄正改后作文。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>范围：九上全册＋九下第一、三单元；古诗文新增《曹刿论战》等篇目。</li>
+        <li>名著：《简爱》（校本1—6）＋《唐诗三百首》（正规出版社版本均可）。</li>
+        <li>语基重点：古诗文默写8分、现代文“读读写写”、文言课下注释及小语段阅读。</li>
+        <li>阅读与写作：阅读必考“议论文＋小说”；作文60分（含1—3分卷面分，文体不限）。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>留好初中全套6册课本，每天在家花半小时按表背熟，确保8分默写零失分。</li>
+        <li>每周独立完成名著校本及《顶尖课课练》名著综合练习并订正。</li>
+        <li>做好阅读课堂笔记，反复研读错题参考答案总结规律，重质不搞题海。</li>
+        <li>作文务必写满600字（保40分底线，未满仅20多分），结合2020—2026一检题练审题，严禁套作，改后抄入专用作文本练字。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>立即核查备齐九下语文课本、全套6册课本及正规版《唐诗三百首》。</li>
+        <li>将4张（1—8页）背诵表装订，对不自觉或小测低于80分（F）者每日督促背默。</li>
+        <li>11月17日提醒带回《曹刿论战》小测卷；检查作文满600字、卷面及作文本抄正。</li>
+        <li>切勿盲目外购阅读刷题教辅。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 数学 ==================== -->
+  <section id="view-shuxue" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">数学备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>数学</h2>
+      <div class="sub-meta">一检时间：2027年1月18日（周一）15:00—17:00</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>目前已教至九下“相似”，本学期将上完“相似”与“锐角三角函数”为下学期总复习留时间。</li>
+        <li>按新课进度推进并穿插二次函数练习巩固，无暇停课整章重讲旧知。</li>
+        <li>每节课前提问回顾前日重点；高频开展选填基础小测并用“校和家”加分激励。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>考查范围：九年级上册全册＋九年级下册第三十一章“相似”。</li>
+        <li>基础占比：约60%—70%为常规基础题（中心对称、平移、反比例函数及前排解答题）。</li>
+        <li>核心重点：九上二次函数（一般式与顶点式选择、小数或大数计算）仍是重中之重。</li>
+        <li>压轴难点：第10、16、23—25题较难，第23题必考大阅读量跨学科“综合实践”题。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>抓牢60%—70%送分题，分清二次函数两式适用条件，遇复杂系数先巧算并防符号错。</li>
+        <li>日常作业与考试完整书写解题步骤与最终解析式，避免省略过程被扣一半分。</li>
+        <li>耐心读懂第23题长阅读材料，拒刷偏怪题或不适配福州的外地整页超长题。</li>
+        <li>“相似”学完后，学有余力者下载近年中考卷、质检卷做2小时严格限时训练。</li>
+        <li>克服拖拉，难题可留空1—2道并课后问老师，严禁用手机搜抄答案。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>理性看待分数波动，登“智学网”看年段排名进退并下载答题卡查前排基础失分。</li>
+        <li>每日适度关心作业剩余量，沟通切忌啰嗦引发叛逆。</li>
+        <li>重点排查夜间偷玩手机，保障睡眠以杜绝白天课堂犯困打瞌睡。</li>
+        <li>周末及秋假协助学有余力的孩子安排2小时套卷限时训练。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 英语 ==================== -->
+  <section id="view-yingyu" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">英语备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>英语</h2>
+      <div class="sub-meta">一检时间：2027年1月19日（周二）15:00—17:00</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>新教材首届已教九上Unit 4过半，后续推进Unit 4—6并在一检前组织真题训练。</li>
+        <li>紧抓配套练习册（错题折角重订正）与自主校本练习，辅以背默本定期批注评语。</li>
+        <li>不定期用练习册配套白卷随堂测试并扫入“智学网”。</li>
+        <li>周末分层打卡：数英一班及二班90分+完成4—5篇以上课外阅读；二班90分以下朗读课文词汇。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>考查范围：九年级上册 Unit 1—Unit 6（半期已考1—3单元）。</li>
+        <li>选择题90多分：听力15分、单选15分、完形10题、阅读4篇40分（占分最重，后两篇或B/D篇较难）、五选五5分。</li>
+        <li>非选择题：课文对话背诵句子题5题10分、短文填词10空10分（难点）及书面表达。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>按答题卡补弱：单选错多背九上长难词短语，完形错4—5个或填词错3个以上做专项，句子题背熟课文对话。</li>
+        <li>严格执行周末分层打卡，90分以上每周读4—5篇课外阅读，90分以下多朗读培养语感。</li>
+        <li>统筹考场时间，严防阅读超时导致书面表达未写完；写作善用题目线索与课内句型。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>登录“智学网”下载英语答题卡，了解白卷测试机制并协助定位薄弱题型。</li>
+        <li>定期检查练习册（1—3单元应全部完成，看折角是否重订正）、校本及背默本评语。</li>
+        <li>重点监督每周末分层阅读或朗读打卡落实，有疑问可微信或电话联系于老师。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 物理 ==================== -->
+  <section id="view-wuli" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">物理备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>物理</h2>
+      <div class="sub-meta">一检时间：2027年1月19日（周二）8:30—10:00 ｜ 小四科C级红线</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>日常课堂对标厦门中考难度、拔高题达外省难度（半期均分较一检约有10分提升空间）。</li>
+        <li>每周安排5节习题课，每天由旧知识衔接下放1道难题。</li>
+        <li>在前期30份校本基础上，每周末按日拆分布置教育局要求购置的两本辅材练习。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>考查范围：九年级第十三章至第十九章。</li>
+        <li>考查重点：核心概念深层理解，以及面对难题前置等卷型变化的时间统筹能力。</li>
+        <li>等级与目标：严守中考C等级红线；半期对标85分（本校）、90分（老九所）、95分（一三附）。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>克服曾学浅层知识产生的“我都知道”心态，专注听透课内5天阶梯式铺垫，忌不懂概念硬刷题海。</li>
+        <li>认真完成每日拆分的辅材与校本作业，校本按序装订并清晰标注错题。</li>
+        <li>掌握考场控时策略，遇前置难题及时调整，确保后排送分题稳拿满分，可持卷找辛老师析弱。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>引导孩子信任课内系统教学节奏（周末校外2小时无法替代校内5天容量）。</li>
+        <li>按抗压特点与辛晓瑜老师沟通：抗压者可请老师课堂点名提醒走神，敏感者避免课堂点名。</li>
+        <li>督促校本装订、错题标注及周末两本辅材分日任务（作业完成度与成绩匹配率超95%）。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 化学 ==================== -->
+  <section id="view-huaxue" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">化学备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>化学</h2>
+      <div class="sub-meta">一检时间：2027年1月19日（周二）10:45—11:45 ｜ 小四科C级红线</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>本学期最多教至九下第8章；2027年4月结束新课，距5月二检仅两周多复习，故将复习融入每周复盘。</li>
+        <li>已发1—18号校本（学案）并同步至群；11月17日布置少量秋假作业。</li>
+        <li>日常作业仅课本与《顶尖课课练》（每天2页不到10题，约20分钟，配答案自查）。</li>
+        <li>每周下午1—2次基础小测（提前发题、考后推分）；讲评后要求在原卷填写估分。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>考查范围：九年级第一至第八章（九上1—7章、九下第8章）。</li>
+        <li>记忆重点：元素符号、化合价、原子团、化学式及已学反应表达式（即将学化学方程式）。</li>
+        <li>能力与底线：重化学思维情境阅读与紧扣实验标题的规范文字表述；严守C等级红线。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>践行“理科思维＋文科记忆”，熟背笔记概念与化学用语并配合适量习题。</li>
+        <li>记好1—18号校本笔记，每天20分钟独立完成《顶尖课课练》并红笔订正（禁抄答案），合放原卷与答题卡填估分。</li>
+        <li>摒弃等明年4月总复习幻想，坚持每周复盘，探究题紧扣实验标题作答，用拍照或AI归集错题。</li>
+        <li>秋假完成校本1—18整理，背熟化合价、原子团、元素符号、化学式及已学表达式。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>核查桌面是否有化学原卷与答题卡（无卷即未交），检查估分填写及与实分差距。</li>
+        <li>秋假陪孩子逐题排查错因（区分未背诵、粗心、读不懂探究题或概念不熟做题慢）。</li>
+        <li>日常三查：对照群电子学案查笔记背诵、查《顶尖课课练》字迹与红笔订正、关注每周小测推送与红笔订正。</li>
+        <li>协助拍照或用AI整理错题，秋假监督完成校本1—18整理与化学用语背诵。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 道德与法治 ==================== -->
+  <section id="view-daofa" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">道德与法治备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>道德与法治</h2>
+      <div class="sub-meta">一检时间：2027年1月20日（周三）10:15—11:45 ｜ 小四科C级红线</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>每天早上7:40科任老师进班组织早读复习，强化日常识记积累。</li>
+        <li>半期考后年段利用课后服务时间，按成绩动态开展全学科分层培优补差。</li>
+        <li>课堂同步推进九上新课掌握与八下旧知、年度时事的系统梳理。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>考查范围：八年级下册、九年级上册及2026年5—12月时事。</li>
+        <li>录取红线：属中考“小四科”C等级红线科目，按全市考生成绩百分比划定，未达C级不能被任何一级达标校录取。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>死守早上7:40早读与日常正课听课阵地，提高课内吸收效率。</li>
+        <li>对照“校和家”年段同百分比区间均分排查自身差距，若是弱科坚持每日一练。</li>
+        <li>同步落实九上新课掌握与八下旧知、2026年5—12月时事梳理。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>查“校和家”比照同区间均分（低3分以上为弱科），结合“智学网”答题卡查缺漏。</li>
+        <li>督促每晚23:00前入睡、早上7:40准时到班早读，不随意请早读假或第一节课假。</li>
+        <li>持续紧盯道法等级表现，严防掉入C级以下。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 历史 ==================== -->
+  <section id="view-lishi" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">历史备考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>历史</h2>
+      <div class="sub-meta">一检时间：2027年1月20日（周三）8:30—9:30 ｜ 小四科C级红线</div>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>每天早上7:40科任老师进班组织早读复习，夯实跨学年基础。</li>
+        <li>半期考后年段利用课后服务动态开展全学科分层培优补差。</li>
+        <li>推进九上世界史教学，同步衔接八上中国史复习巩固。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>考查范围：《中国历史》八年级上册、《世界历史》九年级上册。</li>
+        <li>录取红线：属中考“小四科”C等级一类校录取红线科目，且考查跨八、九年级两册内容。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>摒弃考前临时突击思维，提高日常课堂听课效率。</li>
+        <li>对照“校和家”年段同百分比区间均分定位薄弱环节，弱科抓实基础。</li>
+        <li>尽早启动八上中国史与九上世界史的同步复习巩固。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>通过“校和家”区间均分表（低3分以上为弱科）与“智学网”答题卡协助排查弱项。</li>
+        <li>严管手机并督促23:00前入睡，确保7:40早读与白天课堂专注度。</li>
+        <li>持续紧盯历史成绩等级，严防掉入C级以下。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+  <!-- ==================== 体育 ==================== -->
+  <section id="view-tiyu" class="view">
+    <div class="topbar">
+      <button type="button" class="back-btn" data-back>← 返回首页</button>
+      <span class="page-tag">体育中考</span>
+    </div>
+    <div class="card sub-header">
+      <h2>体育</h2>
+      <div class="sub-meta">2027年4月福州体育中考（总分40分）｜ 11月24日选考模拟测</div>
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">体育中考三类项目与满分标准表（总分40分）</h3>
+      <div class="tbl-wrap">
+        <table class="pe-tbl">
+          <thead>
+            <tr><th>类别与分值</th><th>项目</th><th>男生满分</th><th>女生满分</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pe-cat" rowspan="2">必选类<br>二选一（15分）</td>
+              <td>1000米(男) / 800米(女)</td><td>3′40</td><td>3′25</td>
+            </tr>
+            <tr>
+              <td>200米游泳</td><td>4′48</td><td>5′08</td>
+            </tr>
+            <tr>
+              <td class="pe-cat" rowspan="3">选考类<br>三选一（9分）</td>
+              <td>排球对墙垫球</td><td>33</td><td>30</td>
+            </tr>
+            <tr>
+              <td>篮球运球绕杆往返</td><td>13′2</td><td>15′5</td>
+            </tr>
+            <tr>
+              <td>足球运球绕杆</td><td>9′3</td><td>12′3</td>
+            </tr>
+            <tr>
+              <td class="pe-cat" rowspan="3">抽选考类<br>抽3选2（16分）</td>
+              <td>50米</td><td>7′3秒</td><td>7′9秒</td>
+            </tr>
+            <tr>
+              <td>1分钟跳绳</td><td>175次</td><td>170次</td>
+            </tr>
+            <tr>
+              <td>双手前掷实心球</td><td>11米</td><td>7.7米</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">后期安排</h3>
+      <ul class="bullet-list">
+        <li>2027年福州体育中考抽考结果已公布，正式考试定于2027年4月。</li>
+        <li>2026年11月24日（周二）全年级拟开展选考项目模拟测试（不含长跑和游泳）。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">一检范围与重点</h3>
+      <ul class="bullet-list">
+        <li>1月全市一检考7门文化科；体育聚焦11月24日选考模测与4月中考40分达标。</li>
+        <li>三大类构成为必选15分、选考9分、抽选考16分，需尽早锁分冲刺。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">学生如何准备</h3>
+      <ul class="bullet-list">
+        <li>对照满分标准，立即明确哪两项可冲刺高分或满分。</li>
+        <li>自11月18日秋假起制定体能与技能锻炼计划，坚持规律运动。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="sec-title">家长如何配合</h3>
+      <ul class="bullet-list">
+        <li>密切留意班级群关于11月24日选考模拟测通知，及时填报选项。</li>
+        <li>秋假及日常督促孩子劳逸结合，按计划坚持规律体育锻炼。</li>
+      </ul>
+    </div>
+    <button type="button" class="bottom-back" data-back>← 返回纪要首页</button>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var views = document.querySelectorAll('.view');
+  function showView(id, push) {
+    var target = document.getElementById('view-' + id) ? id : 'home';
+    for (var i = 0; i < views.length; i++) {
+      views[i].classList.toggle('active', views[i].id === 'view-' + target);
+    }
+    if (push) {
+      var hash = target === 'home' ? '#home' : '#' + target;
+      if (location.hash !== hash) history.pushState(null, '', hash);
+    }
+    window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('click', function (e) {
+    var entry = e.target.closest('[data-target]');
+    if (entry) {
+      showView(entry.getAttribute('data-target'), true);
+      return;
+    }
+    var back = e.target.closest('[data-back]');
+    if (back) {
+      if (location.hash && location.hash !== '#home') {
+        history.back();
+      } else {
+        showView('home', true);
+      }
+    }
+  });
+
+  window.addEventListener('popstate', function () {
+    var h = (location.hash || '#home').replace(/^#/, '');
+    showView(h || 'home', false);
+  });
+
+  var initHash = (location.hash || '').replace(/^#/, '');
+  if (initHash && initHash !== 'home') showView(initHash, false);
+
+  var avgTbl = document.getElementById('avg-table');
+  var pickedBox = document.getElementById('picked-box');
+  var subjs = ['语', '数', '英', '物', '化', '道', '历'];
+  if (avgTbl && pickedBox) {
+    avgTbl.querySelector('tbody').addEventListener('click', function (e) {
+      var tr = e.target.closest('tr');
+      if (!tr) return;
+      var rows = avgTbl.querySelectorAll('tbody tr');
+      var already = tr.classList.contains('picked');
+      for (var i = 0; i < rows.length; i++) rows[i].classList.remove('picked');
+      if (already) {
+        pickedBox.style.display = 'none';
+        return;
+      }
+      tr.classList.add('picked');
+      var tds = tr.querySelectorAll('td');
+      var parts = [];
+      for (var j = 1; j < tds.length; j++) {
+        parts.push(subjs[j - 1] + (parseInt(tds[j].textContent, 10) - 3));
+      }
+      pickedBox.textContent = '【' + tds[0].textContent + '】薄弱警戒线（均分-3分，低于此分需加强）：' + parts.join(' / ');
+      pickedBox.style.display = 'block';
+    });
+  }
+})();
+</script>
+</body>
+</html>
