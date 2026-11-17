@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>生日派对用户调研总结报告｜NEO 生日派对用户调研</title><style>
+:root{--paper:#faf7f1;--ink:#211d19;--sub:#6f675c;--line:#ddd3c4;--accent:#9a3412;--accent-soft:#f3e7dc;--card:#fffdf9;--green:#3f6212}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.75}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px 64px}
+a{color:var(--accent);text-decoration:none}
+header.top{padding:34px 0 8px;border-bottom:2px solid var(--ink)}
+.kicker{font-size:12px;letter-spacing:.22em;color:var(--accent);font-weight:700}
+h1{font-size:27px;line-height:1.35;margin:8px 0 6px;font-weight:800}
+.lede{color:var(--sub);font-size:14px;margin:0 0 14px}
+h2.sec{font-size:19px;margin:34px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);padding:12px 10px;text-align:center}
+.stat b{display:block;font-size:24px;line-height:1.2}
+.stat span{font-size:12px;color:var(--sub)}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 6px}
+.dot{width:26px;height:26px;border-radius:50%;border:1.5px solid #c9bda9;color:#a2937d;font-size:11px;display:flex;align-items:center;justify-content:center;background:transparent}
+.dot.done-sum{border-color:var(--ink);background:var(--ink);color:#fff;font-weight:700}
+.dot.done{border-color:var(--accent);color:var(--accent);font-weight:700;background:var(--accent-soft)}
+.legend{font-size:12px;color:var(--sub)}
+.note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:10px 14px;font-size:13.5px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);margin:14px 0;overflow:hidden}
+.card img.cover{width:100%;height:210px;object-fit:cover;display:block}
+.card .body{padding:14px 16px 16px}
+.card h3{margin:2px 0 6px;font-size:17px}
+.meta{font-size:12.5px;color:var(--sub);margin-bottom:8px}
+.tag{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:11px;padding:0 7px;border-radius:999px;margin-right:6px;line-height:1.9}
+.tag.grey{border-color:#b6a98f;color:var(--sub)}
+.snap{font-size:14px;margin:6px 0}
+.snap li{margin:3px 0}
+ul.snap{padding-left:19px;margin:6px 0}
+.btn{display:inline-block;margin-top:10px;border:1.5px solid var(--ink);color:var(--ink);padding:7px 16px;font-size:13.5px;font-weight:700;background:#fff}
+.btn:active{background:var(--ink);color:#fff}
+.featured{border:1.5px solid var(--ink)}
+.placeholder{height:120px;display:flex;align-items:center;justify-content:center;background:#efe9dd;color:#8a7c66;font-size:13px;border-bottom:1px solid var(--line)}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--sub)}
+/* report pages */
+.back{font-size:13.5px;display:inline-block;margin:18px 0 0}
+.toggle{display:flex;gap:0;margin:18px 0 4px;border:1.5px solid var(--ink);width:fit-content;background:#fff}
+.toggle button{appearance:none;border:0;background:transparent;padding:9px 18px;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit}
+.toggle button.on{background:var(--ink);color:#fff}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:170px;object-fit:cover;display:block;border:1px solid var(--line)}
+.gallery figcaption{font-size:12px;color:var(--sub);margin-top:4px}
+.gallery figure:only-child{grid-column:1/-1}
+.gallery figure:only-child img{height:250px}
+article{font-size:15px}
+article h1{font-size:22px}
+article h2{font-size:19px;margin:28px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+article h3{font-size:16px;margin:20px 0 8px}
+article table{border-collapse:collapse;width:100%;font-size:13.5px;display:block;overflow-x:auto;margin:12px 0}
+article th,article td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top;min-width:64px}
+article th{background:#f1eadd}
+article blockquote{margin:12px 0;padding:8px 14px;background:var(--accent-soft);border-left:3px solid var(--accent);color:#3d362e}
+article blockquote p{margin:4px 0}
+article hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+article li{margin:4px 0}
+article code{background:#efe9dd;padding:0 4px;font-size:.92em}
+.hidden{display:none}
+@media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:23px}.gallery img{height:130px}.card img.cover{height:170px}}
+</style></head>
+<body><div class="wrap"><a class="back" href="index.html">← 返回报告主页</a>
+<header class="top"><div class="kicker">总结报告 · v0.2 滚动版</div><h1>生日派对用户调研总结报告</h1><p class="lede">汇总第 1、5 场 · 其余 3 场已完成待并入 · 结论均为初步信号</p></header>
+<div class="note">本版（v0.2）为阶段性总结：目前已完成 5 场调研，本版正文只汇总了其中第 1、5 场；第 2、3、4 场待并入下一版。总结报告目前只有一个版本，故本页没有版本切换。</div>
+<article><blockquote>
+<p><strong>当前进度：已汇总 2 / 30 批次（11 月第一轮：第 1 批 2026-11-05、第 3 批 2026-11-14）</strong><br />
+第 2 批的录音和纪要还没有存进本地资料，本版没有纳入，补齐后并入 v0.3。<br />
+本稿按《生日派对运营调研｜调研规划｜2026-11-03》中的报告框架搭建，每完成一批就把新内容并入对应章节。<br />
+两批都<strong>没有回收问卷评分</strong>，也<strong>还没有门店（B 端）数据</strong>，所以下文的结论都是「初步信号」，不能作为定论。两批都出现的信号标为「两批一致」，可信度高于单批信号。<br />
+标注说明：🟢 正向信号　🟡 中性 / 有条件　🔴 负向 / 问题　⏳ 待补数据</p>
+</blockquote>
+<hr />
+<h2>1. 结论摘要</h2>
+<p><strong>要回答的问题：应该打造哪些核心服务？依据是什么？</strong></p>
+<h3>1.1 核心服务清单（初判，2 批次）</h3>
+<table>
+<thead>
+<tr>
+<th>判断</th>
+<th>服务</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 <strong>优先打造</strong></td>
+<td>生日照 / 拍照打卡</td>
+<td><strong>两批一致</strong>：都把拍照出片当作评价生日服务的第一标准。模板偏好分人群，「粉色派对」和「头版头条」「喜报」「特此通知」这类公文或新闻梗模板，两批都给了好评</td>
+</tr>
+<tr>
+<td>🟢 <strong>优先打造（先验证付费）</strong></td>
+<td>包厢实体布景</td>
+<td><strong>两批一致</strong>：扣分都和「现场没有实体装扮、出片不如餐厅」有关。第 3 批女寿星主动给出 39.9 / 69.9 / 99.9 元三档价格，需要真实下单验证</td>
+</tr>
+<tr>
+<td>🟢 <strong>优先打造</strong></td>
+<td>疯狂猜词</td>
+<td>第 1 批唯一被认可的玩法：全员互动、没有门槛（有卡死 Bug，必须先修）。第 3 批没有玩到</td>
+</tr>
+<tr>
+<td>🟡 <strong>保留并改造（先修 Bug）</strong></td>
+<td>开场欢迎仪式 / 寿星定制氛围</td>
+<td><strong>两批一致</strong>：都看重「进门第一印象」，也都希望能定制（合影、风格、姓名和祝福语）。但两批都没看到完整效果：第 1 批中途才启动系统，第 3 批定制提交失败、现场报 <code>110</code> 错误</td>
+</tr>
+<tr>
+<td>🟡 <strong>保留并改造</strong></td>
+<td>生日祝福 / 定制祝福歌（AI 视频）</td>
+<td>第 1 批表示「会用」；第 3 批听懂「能换成自己的形象」后觉得有意思，但同行朋友扫码后没有上传照片，卡在制作这一步</td>
+</tr>
+<tr>
+<td>🟡 <strong>分人群</strong></td>
+<td>动起来 / 热舞 / 寿星的指令</td>
+<td>两批评价相反：第 1 批学生觉得站起来跳舞很尴尬；第 3 批重度 KTV 用户觉得「都还可以」，还希望加手机体感、能自己写梗</td>
+</tr>
+<tr>
+<td>🟡 <strong>弱化或合并</strong></td>
+<td>生日歌 / 蛋糕仪式</td>
+<td>第 1 批对仪式没有记忆，「有个氛围就够」；第 3 批自带蛋糕，访谈时还没切，没有评价</td>
+</tr>
+<tr>
+<td>⏳ <strong>未覆盖</strong></td>
+<td>搞怪 pose、蹦迪狂欢</td>
+<td>两批都没有单独聊到，下一批需要逐项补问</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 关键发现</h3>
+<ol>
+<li><strong>出片是生日服务的第一评判标准，两批的扣分也都扣在出片上。</strong>（两批一致）第 1 批氛围满意度 7.5 / 10，认为出片和适用面不如餐厅、素材不够惊艳；第 3 批整场满意度 8.0 / 10，2 分全扣在「缺少实体装扮」和「拍照灯光不好」上。注意：两批问的满意度题目不同（氛围满意度 / 整场满意度），<strong>两个分数不能直接比较</strong>。</li>
+<li><strong>KTV 在生日动线里是晚饭的补充，不是主场。</strong>（两批一致）「生日 = 晚饭」，主环节在餐厅：第 1 批习惯先唱歌再吃饭；第 3 批平时是餐厅过完生日再来 KTV 续摊，这次是先唱后吃。两批都提到餐厅的生日服务是免费的（摆台、气球、唱生日歌），这是用户心里的对照基准。</li>
+<li><strong>付费意愿分人群：女生出片局愿意付，学生和男生局基本不付。</strong> 第 1 批学生「免费提供才考虑」；第 3 批女寿星愿意为布景付费，心理上限 100 元以内，建议分 39.9 / 69.9 / 99.9 元三档，但同时提醒纯男生局几乎不会为布置加钱。目前只有 1 位受访者给出具体价格，需要验证。</li>
+<li><strong>拍照灯光两批都是负面评价，问题是「光不对」，不是画面本身。</strong>（两批一致）第 1 批说白光直射「像坐在教室里」；第 3 批说蓝光和紫、粉、红等深色光很不上相，而且歌曲一暂停灯光就锁住不变。两批诉求一致：暖色柔光，第 3 批还想要只打在蛋糕或礼物上的筒灯追光。</li>
+<li><strong>拍照模板的审美分人群，不存在一套通用排序。</strong> 「椰树」被第 1 批学生列为必留（有梗、抽象），却被第 3 批女生评为「欠打」；第 3 批最喜欢的是会自动配灯的「黑影 / 剪影」模式（拍照不露脸，有氛围感）。</li>
+<li><strong>每一批都被一个阻断性 Bug 拉低体验。</strong>（两批一致）第 1 批疯狂猜词卡死；第 3 批定制氛围提交失败、现场报 <code>110</code> 错误，进门核心仪式没能播放。</li>
+<li><strong>内容更新能带来复购和转介绍。</strong> 第 3 批受访者是第二次来嗨瓣，之前已带朋友来过；明确表示如果每 1–2 个月更新玩法和模板还会再来。第 1 批则提醒：生日离得近的朋友不会连续来，新鲜感会衰减。</li>
+</ol>
+<h3>1.3 行动建议（立即可做）</h3>
+<ul>
+<li>修复定制氛围提交失败和扫码绑定包厢报 <code>110</code> 错误，确保预订时设置的欢迎氛围到店就能播放。</li>
+<li>确认疯狂猜词卡死是否已修复；没有修复的，继续作为 P0。</li>
+<li>拍照模式提供暖白光 / 暖色柔光预设，并修复「歌曲暂停后灯光锁死」。</li>
+<li>小范围试推 39.9 / 69.9 / 99.9 元三档布景包，记录真实下单情况。</li>
+<li>下一批起当场回收逐项评分问卷，并按原题问 U8（只保留 3 项），补齐两批都缺的评分和取舍数据。</li>
+</ul>
+<hr />
+<h2>2. 调研背景与方法</h2>
+<p><strong>要回答的问题：调研了谁？结论可信到什么程度？</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>第 1 批</th>
+<th>第 3 批</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日期</td>
+<td>2026-11-05</td>
+<td>2026-11-14（周六下午）</td>
+</tr>
+<tr>
+<td>门店</td>
+<td>⏳ 待填</td>
+<td>嗨瓣凯佳店</td>
+</tr>
+<tr>
+<td>是否真实生日</td>
+<td>否，模拟体验</td>
+<td>是，寿星自己选店、自己预订，同行带了蛋糕</td>
+</tr>
+<tr>
+<td>样本</td>
+<td>2–3 名 21–23 岁在校学生（公司同一部门的实习生），有人之前体验过，有人首次体验</td>
+<td>重度 KTV 女寿星（每月 3–4 次，第二次来嗨瓣）及同行男女朋友；录音中 3 人发声</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>现场体验 + 小组深访，没有回收问卷</td>
+<td>真实生日体验 + 现场小组访谈，没有回收问卷</td>
+</tr>
+<tr>
+<td>时长</td>
+<td>约 45 分钟</td>
+<td>约 27 分钟</td>
+</tr>
+<tr>
+<td>记录</td>
+<td>录音、转写、单场纪要（见附录）</td>
+<td>录音、转写、单场纪要（见附录）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>目标</strong>：用 30 批次派对，验证生日派对应该打造哪些核心服务。</li>
+<li><strong>范围</strong>：重点是到店后的 ③ 到店与核销 → ⑦ 结束与离场；①② 了解活动和预订只记录渠道等背景（第 3 批的预订上传失败直接影响了到店体验，所以一并记录）。</li>
+<li><strong>样本分布</strong>：已汇总 2 批，均为 C 端；门店（B 端）0 家。</li>
+</ul>
+<p><strong>局限</strong><br />
+- 只汇总了 2 批，第 2 批资料尚未入库；两批人群差异很大（学生实习生 vs 重度 KTV 女用户），分歧点还不能判断是人群差异还是个体差异。<br />
+- 两批的满意度题目不同，分数不能横向比较；两批都没有回收逐项评分问卷。<br />
+- 第 1 批不是真实生日，仪式类服务的感知偏弱；系统由工作人员<strong>中途</strong>启动，开场氛围没有完整展示。<br />
+- 第 3 批受访者是回头客，并且已经带朋友来过，对品牌本来就有好感，评价可能偏正面；定制氛围因 Bug 没能播放，无法评价定制效果。<br />
+- 访谈提纲里的 U8（服务取舍）两批都没有按原题问；U10（付费）、U11（推荐与复购）只有第 3 批问到。</p>
+<hr />
+<h2>3. 用户评价与价值判断</h2>
+<p><strong>要回答的问题：用户是否满意？凭什么判断办得好？觉得值多少钱？</strong></p>
+<h3>3.1 满意度与推荐</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>第 1 批</th>
+<th>第 3 批</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>满意度</td>
+<td><strong>7.5 / 10</strong>（氛围满意度：与「想玩得疯一点」时期待的氛围相比）</td>
+<td><strong>8.0 / 10</strong>（整场满意度），「目前体验过最好的 KTV 之一」</td>
+</tr>
+<tr>
+<td>预期差</td>
+<td>🟡 开场「还可以，有氛围感」；个性化效果「很一般、不够出彩」</td>
+<td>🟡 欢迎仪式流程「做得很好」，但定制氛围没能播放；播放内容「偏千篇一律」</td>
+</tr>
+<tr>
+<td>推荐意愿</td>
+<td>⏳ 没问</td>
+<td>🟢 强；之前已经实际带朋友来过，朋友反馈「这个很不错」</td>
+</tr>
+<tr>
+<td>复购意愿</td>
+<td>⏳ 没问</td>
+<td>🟢 内容每 1–2 个月更新就「会因为这些更新再来」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>满意度扣分原因</strong></p>
+<table>
+<thead>
+<tr>
+<th>原因</th>
+<th>说明</th>
+<th>批次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺少实体装扮，出片不如餐厅</td>
+<td>第 1 批认为餐厅出片更好、更适合大多数人的聚会（测试当天没有做额外装扮）；第 3 批认为只靠屏幕，包厢整体仍显单调，自拍时屏幕周边、拍合照时沙发背后的墙都是空的</td>
+<td>第 1、3 批</td>
+</tr>
+<tr>
+<td>拍照灯光不好</td>
+<td>冷色光和深色彩灯显黑；暂停后灯光锁死；没有柔和的暖白光，也不能单独打光</td>
+<td>第 3 批（第 1 批在玩法评价里也提到）</td>
+</tr>
+<tr>
+<td>素材效果还不够惊艳</td>
+<td>屏幕氛围和拍照素材没有让用户觉得非常惊艳</td>
+<td>第 1 批</td>
+</tr>
+<tr>
+<td>想玩疯时，家里更放松</td>
+<td>家里比包厢更松弛，也没有卫生方面的困扰（主观判断）</td>
+<td>第 1 批</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 用户凭什么判断「办得好」（价值权重）</h3>
+<ol>
+<li><strong>出片</strong>（两批一致）：拍照效果是第一位。第 1 批：「环境不是很重要，人要好看。」第 3 批：女生来包厢过生日，核心目的就是拍照、出片、留合照。</li>
+<li><strong>进门第一印象 / 惊喜感</strong>（两批一致）：第 1 批以海底捞每次摆台都不一样为例；第 3 批肯定欢迎仪式，但希望内容不要「千篇一律」，能写进寿星姓名、到场朋友和想说的话。</li>
+<li><strong>全员都能参与</strong>：互动玩法要人人都能直接加入，不能让人尴尬（第 1 批）。</li>
+<li><strong>自由度和基础体验</strong>：可以自带酒水、点外卖进包厢、音质好，是第 3 批选嗨瓣的基础理由。</li>
+</ol>
+<h3>3.3 替代方案对比</h3>
+<table>
+<thead>
+<tr>
+<th>替代方案</th>
+<th>用户为什么选它</th>
+<th>嗨瓣的机会</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「漂亮饭」餐厅（如海底捞）</td>
+<td>正好在晚饭时段；环境好看、免费摆台、唱生日歌；出片</td>
+<td>空间可塑性更强，大屏 + 灯光的上限更高</td>
+</tr>
+<tr>
+<td>餐厅包厢（第 3 批）</td>
+<td>普通餐厅只要有包厢，基本都免费布置气球（贴墙、绑椅子）；只有鲜花布置额外收费</td>
+<td>免费基准只到「简单气球」，嗨瓣的付费布景要明显高于这个水平</td>
+</tr>
+<tr>
+<td>日式料理</td>
+<td>灯光暗、放音乐、每桌有布置，符合审美</td>
+<td>餐厅不能大声说话，KTV 可以</td>
+</tr>
+<tr>
+<td>在家</td>
+<td>松弛、干净、没有噪音，可以聊天、玩东西</td>
+<td>设备和仪式感是家里没有的</td>
+</tr>
+<tr>
+<td>方糖（宝龙店）付费生日套餐（第 3 批）</td>
+<td>多束花束气球、全屋挂气球，氛围好</td>
+<td>说明「付费买氛围」已有先例，可作为布景包的参照</td>
+</tr>
+<tr>
+<td>魅 KTV 等大屏竞品（第 3 批）</td>
+<td>打碟、蹦迪模式，屏幕极大</td>
+<td>受访者认为嗨瓣的屏幕和节奏「已经够用」，定位不同</td>
+</tr>
+</tbody>
+</table>
+<h3>3.4 难忘时刻</h3>
+<ul>
+<li>🟢 <strong>生日照</strong>：第 1 批记住了「椰树」背景（有梗、抽象，想发朋友圈）；第 3 批最喜欢「黑影 / 剪影」模式，选中后灯光会自动配合。</li>
+<li>🟢 <strong>歌王争霸赛</strong>（第 3 批）：寿星当场唱到本店第一，惦记晚上还要守擂。</li>
+<li>🔴 <strong>蛋糕仪式</strong>：第 1 批完全没有印象。</li>
+<li>🔴 <strong>定制氛围</strong>：第 3 批提前准备了，结果进门没能播放。</li>
+</ul>
+<h3>3.5 价格感知</h3>
+<ul>
+<li>自助 K 的价格锚点：<strong>约 20–30 元 / 小时</strong>，下午场和夜场差别不大（第 1 批）。</li>
+<li>免费基准：餐厅的摆台、气球、生日歌<strong>都是免费的</strong>；只有鲜花布置要额外付费（两批）。</li>
+<li>透明比价：用户很清楚网上自购 <strong>KT 板 + 气球</strong> 的成本（订婚、满月、周岁都常见自己买），定价超过 100 元或者显得廉价，会马上引起抵触（第 3 批）。</li>
+<li>付费意愿：</li>
+<li>第 1 批学生：「如果是<strong>免费提供</strong>，而且真的让我满意，我肯定会考虑。」</li>
+<li>第 3 批女寿星：愿意为布景付费，心理上限 <strong>100 元以内</strong>，建议 <strong>39.9 / 69.9 / 99.9 元</strong>三档（普通 / 高级 / 豪华），99.9 元档必须「很豪华」（大量反光气球、丰富花束、公仔或布景卡等全套摆台）。</li>
+<li>⚠️ 纯男生局几乎不会为布置和拍照加钱（第 3 批受访者的判断）。</li>
+<li>⏳ 付费决策人、触摸屏玩法的单独购买意愿，两批都没问到。</li>
+</ul>
+<hr />
+<h2>4. 核心服务结论（报告主体）</h2>
+<p><strong>要回答的问题：玩法、体验、功能分别该打造什么？</strong></p>
+<blockquote>
+<p>用户评分列：两批都没有问卷，暂时填「定性倾向」，格式为「第 1 批 / 第 3 批」，「—」表示该批没涉及。同一类型内按倾向从正到负排列（🟢 → 🟡 → 🔴 → ⏳）；从下一批起改为问卷平均分，按分数从高到低排序。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>用户评分</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>玩法</td>
+<td>生日照 / 拍照打卡</td>
+<td>🟢 / 🟢</td>
+<td>两批都是印象最深的环节。第 1 批 8 选 3 留下「椰树」「头版头条」「粉色派对」，其余「AI 味太重」且雷同；第 3 批好评「黑影 / 剪影」「茅台风」（可定制文字）「特此通知」「喜报」「白色蜡烛」「粉色派对」，差评「椰树」（「欠打」）和第二个常规模板（「有点土」），建议新增「锦旗风」和亲子 / 家庭模板</td>
+</tr>
+<tr>
+<td>玩法</td>
+<td>欢乐百宝箱—疯狂猜词</td>
+<td>🟢（有 Bug）/ —</td>
+<td>第 1 批最受认可：人与人互动，不需要了解规则，聊着天也能加入。<strong>两个猜词玩法中有一个会卡死</strong></td>
+</tr>
+<tr>
+<td>玩法</td>
+<td>寿星的指令</td>
+<td>— / 🟡</td>
+<td>第 3 批：「还可以」，建议让朋友自己写梗和惩罚内容，不局限于预设题库</td>
+</tr>
+<tr>
+<td>玩法</td>
+<td>欢乐百宝箱—动起来 / 热舞</td>
+<td>🔴 / 🟡</td>
+<td>第 1 批：站起来跳舞熟人之间也尴尬，K-pop 爱好者宁可放原版 MV 跟跳。第 3 批：「都还可以」；「热舞」偶尔捕捉不到动作；建议「动起来」也接入手机体感（类似 Switch）</td>
+</tr>
+<tr>
+<td>玩法</td>
+<td>搞怪 pose / 蹦迪狂欢</td>
+<td>⏳ / ⏳</td>
+<td>两批都没有单独讨论；第 1 批整体评价是「都玩过，都没有特别好玩的」</td>
+</tr>
+<tr>
+<td>体验</td>
+<td>开场欢迎仪式</td>
+<td>🟡 / 🟢</td>
+<td>第 1 批：屏幕大、灯光跟着变，有氛围感，但系统中途才启动。第 3 批：流程「做得很好」。两批都认为第一印象很重要</td>
+</tr>
+<tr>
+<td>体验</td>
+<td>生日祝福 / 定制祝福歌（AI 视频）</td>
+<td>🟡 / 🟡</td>
+<td>第 1 批：好奇、好玩，表示会用，适合冷场时活跃气氛。第 3 批：试了觉得「还行」；店员解释能把跳舞人物换成自己后才觉得有意思，同行男生扫码后没有上传全身照</td>
+</tr>
+<tr>
+<td>体验</td>
+<td>寿星定制版生日氛围</td>
+<td>🟡 / 🔴（Bug）</td>
+<td>第 1 批：「虽然能出片，但其实很一般」，希望选风格、放合影、有 idol 送祝福。第 3 批：提前一天和当天提交都失败，现场扫码绑定报 <code>110</code> 错误；希望能填寿星姓名、宾客和祝福语，由 AI 生成专属欢迎词和画面</td>
+</tr>
+<tr>
+<td>体验</td>
+<td>生日歌 / 蛋糕仪式</td>
+<td>🔴 / —</td>
+<td>第 1 批对仪式没有记忆，「只要有个氛围就够了」；页面常驻会点，要专门找就不会点。第 3 批自带蛋糕，访谈时还没切</td>
+</tr>
+<tr>
+<td>体验</td>
+<td>包厢实体布置</td>
+<td>⏳ / 🔴</td>
+<td>第 3 批扣分主因：屏幕周边、沙发背后的墙都是空的。建议用反光铝箔气球（部分贴墙、部分加配重飘起来）、沙发后贴「生日快乐」、用干花或假花代替鲜花以便复用</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>AI 云端增强</td>
+<td>🟡 / —</td>
+<td>第 1 批：新奇，但担心人脸被上传、被用来训练</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>拍照入口提示</td>
+<td>— / 🟡</td>
+<td>第 3 批以为屏幕自带摄像头能拍合照；包厢出于隐私不装摄像头，需要明确提示用手机前置摄像头拍</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>点歌 / 曲库</td>
+<td>🔴 / —</td>
+<td>第 1 批：曲库不全，有些想唱的歌找不到（属于 VOD 曲库问题）</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>拍照灯光</td>
+<td>🔴 / 🔴</td>
+<td><strong>两批一致</strong>。第 1 批：白光直射「像坐在教室里」。第 3 批：冷色和深色光显黑；暂停后灯光锁死，要反复暂停 / 播放来调灯；想要能单独打在蛋糕或礼物上的筒灯</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>系统稳定性</td>
+<td>🔴 / 🔴</td>
+<td><strong>两批一致</strong>。第 1 批猜词卡死；第 3 批定制氛围提交失败、<code>110</code> 错误</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 门店执行与可复制性</h2>
+<p><strong>要回答的问题：门店能否稳定交付？多大程度依赖店员发挥？</strong></p>
+<blockquote>
+<p>⏳ B 端门店深访和门店问卷还没开始。下面是两批 C 端访谈里能看到的执行信号。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>已有信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自助完成度</td>
+<td>🔴 第 1 批由工作人员<strong>中途启动</strong>系统；第 3 批用户自己预订、自己上传素材，但定制提交失败，现场在工作人员协助下扫码仍报错。两批都没有走完一次完整的自助流程</td>
+</tr>
+<tr>
+<td>与线上介绍一致度</td>
+<td>🔴 第 3 批预订时设置的定制氛围，到店没有播放</td>
+</tr>
+<tr>
+<td>店员依赖</td>
+<td>🟡 第 1 批蛋糕环节由店员（「丽姐姐」）口头串场，用户仍然没记住仪式；第 3 批 AI 祝福视频要店员解释，用户才明白能做什么。<strong>关键体验目前靠店员讲解，产品本身的引导不够</strong></td>
+</tr>
+<tr>
+<td>门店认可与负担</td>
+<td>⏳ 门店侧还没访谈。可以参考的是：凯佳店自己办的「歌王争霸赛」对重度 K 歌用户激励明显（第 3 批），说明门店有运营活动的意愿和能力</td>
+</tr>
+<tr>
+<td>门店差异</td>
+<td>🟡 目前只有凯佳店 1 家有记录（第 1 批门店待填）。凯佳店该区域包厢隔音一般，门外能清楚听到歌声；小包厢适合 3–4 人，5–6 人的生日局需要引导订大包厢</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 机会与陷阱</h2>
+<p><strong>要回答的问题：还有哪些未满足的需求？哪些好指标其实有风险？</strong></p>
+<h3>6.1 愿望清单（用户主动提出）</h3>
+<ul>
+<li><strong>定制欢迎内容</strong>：展示<strong>合影</strong>而不是寿星单人照（第 1 批）；填寿星姓名、到场朋友和想说的话，由 AI 生成专属欢迎词和画面（第 3 批）。</li>
+<li><strong>暖色柔光和局部追光</strong>：美颜柔光（第 1 批）；暖白光模式，加上只打在蛋糕或礼物上的筒灯，可以用手机或 AI 小助手控制（第 3 批）。</li>
+<li><strong>实体布景</strong>：反光铝箔气球、「生日快乐」背景墙、花束（第 3 批）；赠送小蛋糕来烘托氛围（第 1 批）。</li>
+<li><strong>新拍照模板</strong>：派对主题、变装派对（第 1 批）；「锦旗风」、亲子 / 家庭模板（第 3 批）。</li>
+<li><strong>玩法可以自定义</strong>：「寿星的指令」让朋友写自己的梗和惩罚；「动起来」加手机体感（第 3 批）。</li>
+<li><strong>偶像相关</strong>：idol 出现在屏幕上送祝福；K-pop <strong>打歌舞台 / 虚拟舞台</strong>，按成员分配站位、屏幕上的成员补位（第 1 批）。</li>
+</ul>
+<h3>6.2 延伸场景</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>信号</th>
+<th>价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>女生出片局</strong></td>
+<td>第 3 批：女生过生日的核心就是拍照、留合照，愿意为布景付费</td>
+<td>付费布景包的首要目标人群</td>
+</tr>
+<tr>
+<td><strong>零点生日局</strong></td>
+<td>第 1 批主动提出：零点吹蜡烛、唱生日歌；工作日夜场性价比高</td>
+<td>避开晚饭时段，和餐厅形成错位，仪式感最强</td>
+</tr>
+<tr>
+<td>先唱后吃 / 餐后续摊</td>
+<td>两批都有：第 1 批先唱后吃；第 3 批平时是饭后续摊，这次先唱后吃</td>
+<td>生日服务要在 1–2 小时内完成高光时刻</td>
+</tr>
+<tr>
+<td>连餐带唱（外卖进包厢）</td>
+<td>两批都有人这样做过；第 3 批说可以订长一点的时间，把吃饭和唱歌合在一起</td>
+<td>能把晚饭留在包厢，但「唱久了人会很累」</td>
+</tr>
+<tr>
+<td>家人生日 / 亲子</td>
+<td>第 1 批：帮家人订包厢、放全家老照片；第 3 批：认可亲子 / 家庭模板</td>
+<td>情感价值高，组织者和寿星分离</td>
+</tr>
+<tr>
+<td>门店擂台活动</td>
+<td>第 3 批：歌王争霸赛让重度用户主动守擂</td>
+<td>适合拉重度用户复访</td>
+</tr>
+<tr>
+<td>K-pop 随舞拍摄</td>
+<td>第 1 批：KTV 有私密空间、音响好、灯光可控</td>
+<td>细分人群，有传播属性</td>
+</tr>
+</tbody>
+</table>
+<h3>6.3 交叉信号与陷阱</h3>
+<ul>
+<li>⚠️ <strong>满意度高不等于会选这里。</strong> 两批都把餐厅当作过生日的主场，KTV 是补充；第 1 批还说「想玩疯一点会在家里」。</li>
+<li>⚠️ <strong>8.0 分来自一位回头客。</strong> 第 3 批受访者本来就喜欢嗨瓣、已经带朋友来过，分数可能偏高，需要更多新客样本。</li>
+<li>⚠️ <strong>两批满意度口径不同。</strong> 7.5 是氛围满意度，8.0 是整场满意度，不能说「满意度在上升」。</li>
+<li>⚠️ <strong>99.9 元是心理上限，比价很透明。</strong> 用户知道自购 KT 板和气球很便宜，免费气球的餐厅就在旁边；布景包必须让人一眼看出「比自己买的好、比餐厅送的好」。</li>
+<li>⚠️ <strong>付费意愿分人群。</strong> 女生局愿意付，学生「免费才考虑」，男生局几乎不付；不能用一个人的报价推算整体付费率。</li>
+<li>⚠️ <strong>模板审美分人群。</strong> 「椰树」在一批里是必留、在另一批里是差评，按单批反馈直接删模板有风险。</li>
+<li>⚠️ <strong>「会用」「会再来」都是口头意愿</strong>，需要真实场次、下单和复访数据验证。</li>
+<li>⚠️ <strong>AI 增强吸引人，但有隐私风险</strong>：第 1 批担心人脸被上传；第 3 批也是因为隐私原因，包厢不能装摄像头。推得越重，信任成本越高。</li>
+<li>⚠️ <strong>复购的新鲜感会衰减。</strong> 第 3 批的复访承诺以「1–2 个月更新一次」为前提，内容更新要成为固定投入。</li>
+</ul>
+<hr />
+<h2>7. 落地建议与下一步</h2>
+<p><strong>要回答的问题：运营方案、SOP、产品功能怎么改？哪些还待验证？</strong></p>
+<h3>7.1 改进动作</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>动作</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产品功能</td>
+<td>修复定制氛围提交失败和扫码绑定包厢 <code>110</code> 错误，确保预订时设置的氛围到店必播</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>修复疯狂猜词卡死（如已修复，回填修复日期）</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>拍照模式和暂停状态提供暖白光 / 暖色柔光预设；修复「歌曲暂停后灯光锁死」</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>开放单灯 / 筒灯聚焦模式，可以只开台面筒灯、压暗其他灯</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>拍照模板按人群分流：前置「黑影 / 剪影」「茅台风」「特此通知」「喜报」「粉色派对」等两批或单批高赞模板；「椰树」不删，按人群推荐；淘汰「AI 味重」、雷同和「有点土」的模板；新增「锦旗风」、亲子 / 家庭模板</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>定制氛围支持合影、风格模板，以及寿星姓名、宾客和祝福语填写（对接 AI 小助手方案）</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>AI 祝福视频扫码落地页放成片样例，讲清楚「能把跳舞人物换成你」</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>「热舞」动作捕捉稳定性；「动起来」评估接入手机体感；「寿星的指令」增加自定义梗和惩罚</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>生日歌入口在生日模式下常驻</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>产品功能</td>
+<td>拍照入口明确提示「请用手机前置摄像头拍摄」</td>
+<td>P3</td>
+</tr>
+<tr>
+<td>VOD 曲库</td>
+<td>补齐 VOD 曲库中的热门曲目</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>运营方案</td>
+<td>试推 39.9 / 69.9 / 99.9 元三档布景包，明确每档物料清单；主推反光铝箔气球（贴墙 + 配重飘起）、沙发后「生日快乐」贴饰、可复用的干花或假花</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>运营方案</td>
+<td>测试「零点生日局」夜场套餐</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>运营方案</td>
+<td>测试赠送小蛋糕的效果和成本</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>SOP</td>
+<td>系统由用户自助启动或在入场前启动好，避免中途启动打断开场</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>SOP</td>
+<td>5–6 人的生日局在预订时引导订大包厢</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>SOP</td>
+<td>蛋糕环节的店员话术和屏幕切换节点固定下来，保证用户能「被记住」</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>门店</td>
+<td>向凯佳店反馈包厢隔音问题</td>
+<td>P3</td>
+</tr>
+<tr>
+<td>调研执行</td>
+<td>当场回收逐项评分问卷；按原题问 U8（只保留 3 项）、U10（付费）、U11（推荐与复购）；满意度统一用同一道题；访谈中避免诱导式提问；补齐第 2 批资料和第 1 批门店</td>
+<td>P0</td>
+</tr>
+</tbody>
+</table>
+<h3>7.2 待验证清单</h3>
+<ol>
+<li>真实生日场次中，仪式类服务（蛋糕、生日歌、祝福）的感知是否明显提升？第 3 批是真实场次，但蛋糕在访谈时还没切，仍缺证据。</li>
+<li>「只保留 3 项」（U8）的排序：生日照、猜词、布景是否稳定排在前列？</li>
+<li>定制氛围修好后，完整播放一次的真实效果和惊喜感如何？</li>
+<li>39.9 / 69.9 / 99.9 元布景包的实际下单率，女生局、情侣、男生局、家庭局分别如何？和免费气球的餐厅相比优势在哪？</li>
+<li>拍照模板偏好是否按年龄、性别、职业稳定分化（如「椰树」）？</li>
+<li>搞怪 pose、蹦迪狂欢的评价。</li>
+<li>新客和回头客的满意度差异（第 3 批是回头客）。</li>
+<li>门店侧：执行负担、店员依赖、门店之间的差异。</li>
+</ol>
+<h3>7.3 与 K 前引流的衔接</h3>
+<ul>
+<li>用户选 KTV 时<strong>看性价比和团购</strong>，信息来自<strong>抖音</strong>（第 1 批）。生日服务适合作为团购套餐的差异化卖点，三档布景包可以做成团购加购项。</li>
+<li>定制氛围的惊喜感依赖<strong>提前预订并上传素材</strong>；第 3 批恰恰卡在这一步，所以预订环节（①②）的稳定性直接决定到店第一印象。</li>
+<li>预订时按人数提示包厢大小，避免 5–6 人订到 3–4 人的小包厢。</li>
+<li>「零点生日局」可以单独作为一个引流产品来测试。</li>
+</ul>
+<hr />
+<h2>附录</h2>
+<h3>A. 批次台账</h3>
+<table>
+<thead>
+<tr>
+<th>批次</th>
+<th>日期</th>
+<th>门店</th>
+<th>人数 / 关系</th>
+<th>是否真实生日</th>
+<th>问卷</th>
+<th>单场纪要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2026-11-05</td>
+<td>⏳ 待填</td>
+<td>2–3 人 / 同部门实习生（21–23 岁学生）</td>
+<td>否（模拟体验）</td>
+<td>无</td>
+<td><a href="session-1.html">第一场纪要</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>⏳</td>
+<td>⏳</td>
+<td>⏳</td>
+<td>⏳</td>
+<td>⏳</td>
+<td>⏳ 资料尚未入库</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2026-11-14</td>
+<td>嗨瓣凯佳店</td>
+<td>3 人发声 / 女寿星及同行男女朋友（重度 KTV 用户）</td>
+<td>是</td>
+<td>无</td>
+<td><a href="session-3.html">第三场纪要</a></td>
+</tr>
+</tbody>
+</table>
+<p>录音和转写原文含受访者原话，只存在本地 <code>01_原始录音与转写</code>，不上传。</p>
+<h3>B. 竞品与名词</h3>
+<ul>
+<li>「四方朋友」：第 1 批受访者提到的自助 KTV 品牌，在抖音、微信上投放、做团购。名称根据录音读音记录，待核实。</li>
+<li>「方糖」（宝龙店）：第 3 批受访者参加朋友生日的场所，有花束、气球全屋布置，推测是付费生日套餐。</li>
+<li>「魅 KTV」：第 3 批受访者平时最常去的 KTV；福州本地有打碟、蹦迪模式、屏幕极大的竞品。</li>
+</ul></article>
+<footer>NEO 生日派对用户调研 · 报告内容以原始调研报告为准 · 本页为内部调研资料</footer>
+</div></body></html>
